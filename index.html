@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>For boy</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header>
+        <div class="menu">
+            <div class="for-boy">
+                <a href="#" class="curent">VIVA 2025</a>
+            </div>
+            <div class="for-men">
+                <a href="KD.html" >KD</a>
+            </div>
+            <div class="for-girl">
+                <a href="DDT.html">DDT</a>
+            </div>
+        </div>
+    </header>
+<!-- <div class="content">
+	<a data-fancybox="gallery" href="img/ig/i1.jpg" ><img src="img/ig/i1.jpg" alt=""></a>
+	
+</div> -->
+<div class="content" id="content"></div>
+<script>
+        // Base URL for images
+        const baseURL = "https://github.com/HcThanh-IT/data/blob/main/viva-2025/";
+        const contentDiv = document.getElementById('content');
+
+        // Loop to generate image anchors
+        for (let i = 1; i <= 175; i++) {
+             const fileName = `viva (${i}).jpg?raw=true`;
+            const imgURL = `${baseURL}${fileName}`;
+
+            // Create <a> element
+            const anchor = document.createElement('a');
+            anchor.href = imgURL;
+            anchor.setAttribute('data-fancybox', 'gallery');
+
+            // Create <img> element
+            const img = document.createElement('img');
+            img.src = imgURL;
+            img.alt = `VIVA ${i}`;
+
+            // Append <img> to <a>, then <a> to contentDiv
+            anchor.appendChild(img);
+            contentDiv.appendChild(anchor);
+        }
+    </script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
